@@ -6,9 +6,10 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
 import io
 import re
+import os
 
 # Load OpenAI API key from Streamlit secrets
-client = openai.OpenAI(api_key="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")
+client = openai.OpenAI(api_key=os.getenv('debraj_key'))
 
 def generate_refined_resume(chatgpt_prompt, job_profile):   
     # System content dynamically incorporating job profile
